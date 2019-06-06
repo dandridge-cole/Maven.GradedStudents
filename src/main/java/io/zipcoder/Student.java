@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Student implements Comparable<Student>{
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
     ArrayList<Double> examScores;
 
 
