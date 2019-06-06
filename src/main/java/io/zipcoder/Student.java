@@ -1,17 +1,18 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Student {
+public class Student implements Comparable<Student>{
     String firstName;
     String lastName;
     ArrayList<Double> examScores;
 
 
-    public Student(String firstName, String lastName, ArrayList<Double> testScores) {
+    public Student(String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.examScores = testScores;
+        this.examScores = new ArrayList<>(Arrays.asList(testScores));
     }
 
     public String getFirstName() {
@@ -65,5 +66,13 @@ public class Student {
         builder.append("\n> ");
         builder.append(getExamScores());
         return builder.toString();
+    }
+
+    @Override
+    public int compareTo(Student other){
+        int compareLast = this.getLastName().compareTo(other.getLastName());
+        int compareFirst = this.getFirstName().compareTo(other.getFirstName());
+        if(compareLast!=0)return compareLast;
+        return compareFirst;
     }
 }

@@ -14,7 +14,7 @@ public class StudentTest {
                 "\n\tExam 2 -> 95" +
                 "\n\tExam 3 -> 123" +
                 "\n\tExam 4 -> 96";
-        ArrayList<Double> scores = new ArrayList<Double>(Arrays.asList(100.0,95.0,123.0,96.0));
+        Double[] scores = new Double[]{100.0,95.0,123.0,96.0};
          Student student = new Student("Jon","Smith",scores);
          String actual = student.getExamScores();
          Assert.assertEquals(expected,actual);
@@ -22,8 +22,7 @@ public class StudentTest {
 
     @Test
     public void addExamScoreTest(){
-        ArrayList<Double> scores = new ArrayList<>();
-        scores.clear();
+        Double[] scores = new Double[]{};
         Student student = new Student(null,null, scores);
         student.addExamScore(100.0);
         String expected="Exam Scores:" +
@@ -35,7 +34,7 @@ public class StudentTest {
 
     @Test
     public void setExamScoreTest(){
-        ArrayList<Double> scores = new ArrayList<Double>(Arrays.asList(100.0));
+        Double[] scores = new Double[]{100.0};
         Student student = new Student(null,null, scores);
         student.setExamScore(1,150.0);
         String expected="Exam Scores:" +
@@ -47,7 +46,7 @@ public class StudentTest {
 
     @Test
     public void getAvgScoreTest(){
-        ArrayList<Double> scores = new ArrayList<Double>(Arrays.asList(100.0, 150.0, 250.0, 0.0));
+        Double[] scores = new Double[]{100.0, 150.0, 250.0, 0.0};
         Student student = new Student("John","Doe", scores);
         Double actual = student.getAverageExamScore();
         Double expected=125.0;
@@ -56,7 +55,7 @@ public class StudentTest {
 
     @Test
     public void toStringTest(){
-        ArrayList<Double> scores = new ArrayList<Double>(Arrays.asList(100.0, 150.0, 250.0, 0.0));
+        Double[] scores = new Double[]{100.0, 150.0, 250.0, 0.0};
         Student student = new Student("John","Doe", scores);
         String actual = student.toString();
         String expected="Student Name: John Doe" +
