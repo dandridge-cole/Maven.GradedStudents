@@ -51,7 +51,7 @@ public class ClassroomTest {
                 "\n\tExam 2 -> 25\n";
         StringBuilder actual = new StringBuilder();
         for (Student student:classroom.students) {
-            actual.append(student.toString()+"\n");
+            actual.append(student.toString()).append("\n");
         }
         Assert.assertEquals(expected,actual.toString());
     }
